@@ -1,10 +1,10 @@
 var path = Npm.require("path");
 
 Package.describe({
-  summary: "JavaScript.next-to-JavaScript-of-today compiler",
-  version: "1.3.79",
-  name: "mquandalle:harmony",
-  git: "https://github.com/mquandalle/meteor-harmony.git"
+  summary: "JavaScript.next-to-JavaScript-of-today compiler, using ngAnnotate",
+  version: "1.3.80",
+  name: "jasperkuperus:angular-harmony",
+  git: "https://github.com/jasperkuperus/angular-meteor-harmony.git"
 });
 
 Package.registerBuildPlugin({
@@ -14,7 +14,8 @@ Package.registerBuildPlugin({
     "plugin/compile-harmony.js"
   ],
   npmDependencies: {
-    "traceur": "0.0.79"
+    "traceur": "0.0.79",
+    "ng-annotate": "1.0.0"
   }
 });
 

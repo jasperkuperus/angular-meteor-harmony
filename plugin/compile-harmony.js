@@ -1,4 +1,5 @@
 var traceur = Npm.require('traceur');
+var ngAnnotate = Npm.require('ng-annotate');
 
 Plugin.registerSourceHandler("next.js", function (compileStep) {
   var oldPath = compileStep.inputPath;
@@ -14,11 +15,19 @@ Plugin.registerSourceHandler("next.js", function (compileStep) {
   });
 
   try {
+    // First, let Traceur compile 6->5
     var output = compiler.compile(source, oldPath, newPath);
+
+    // ngAnnotate the source
+    var ngAnnotatedOutput = ngAnnotate(output, { add: true });
+    if(ngAnnotatedOutput.errors) {
+      throw new Error(ngAnnotatedOutput.errors.join(': '));
+    }
+
     compileStep.addJavaScript({
       sourcePath: oldPath,
       path: newPath,
-      data: output,
+      data: ngAnnotatedOutput.src,
       sourceMap: compiler.getSourceMap()
     });
   } catch (err) {
