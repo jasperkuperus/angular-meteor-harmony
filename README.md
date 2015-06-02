@@ -9,6 +9,9 @@ If you run `meteor run --production`, all source files are minified, which is a 
 meteor add jasperkuperus:angular-harmony
 ```
 
+## Using babel?
+Are you using babel and Angular in your Meteor project? Have a look at [pbastowski:angular-babel](https://github.com/pbastowski/angular-meteor-babel).
+
 ## Original readme
 
 A thin wrapper around [Traceur](https://github.com/google/traceur-compiler) for [Meteor](https://www.meteor.com/).
