@@ -29,12 +29,12 @@ Package.onUse(function (api) {
   api.imply('mrt:exports@1.0.0');
 });
 
-Package.onTest(function (api) {
-  api.use(['mquandalle:harmony', 'tinytest']);
-  api.addFiles([
-    'tests/harmony_test_setup.js',
-    'tests/harmony_tests.js',
-    'tests/harmony_test_setup.next.js',
-    'tests/harmony_tests.next.js'
-  ]);
-});
+// Package.onTest(function (api) {
+//   api.use(['mquandalle:harmony', 'tinytest']);
+//   api.addFiles([
+//     'tests/harmony_test_setup.js',
+//     'tests/harmony_tests.js',
+//     'tests/harmony_test_setup.next.js',
+//     'tests/harmony_tests.next.js'
+//   ]);
+// });
