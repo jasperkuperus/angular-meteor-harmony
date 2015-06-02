@@ -1,8 +1,8 @@
 # ngAnnotated Harmony for Meteor
-If you are not using angular-meteor, then please use [mquandalle:harmony](https://github.com/mquandalle/meteor-harmony/) instead. This package is only to be used with angular-meteor.
+**Warning:** *only* use this package if you need `ngAnnotate` for your `.next.js` harmony files. Just want harmony for Meteor, but you're not using Angular? Then please use [mquandalle:harmony](https://github.com/mquandalle/meteor-harmony/) instead.
 
 ## Why jasperkuperus:angular-harmony?
-In order to use mquandalle:harmony in production in conjunction with [angular-meteor](https://github.com/olov/ng-annotate), ngAnnotate is a necessity. This package is a fork of mquandalle:harmony, only adding ngAnnotate. So, all `.next.js` files are first compiled to ES5 and then annotated with ngAnnotate, making your Angular setup also work in a minified setup (e.g. `meteor run --production`).
+If you run `meteor run --production`, all source files are minified, which is a good thing, but possibly breaks Angular Dependency Injection. Therefore, this package adds [ngAnnotate](https://github.com/olov/ng-annotate) to the mquandalle:harmony package.
 
 ### Installation
 ```
